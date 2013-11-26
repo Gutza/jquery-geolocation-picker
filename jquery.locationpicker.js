@@ -23,8 +23,6 @@ $.fn.locationPicker = function(options) {
 		}
 
 		var id = $(this).attr('id');
-		var searchButton = $("<input class='picker-search-button' type='button' value='Search'/>");
-		$(this).after(searchButton);
 
 		var picker = $("<div id='" + id + "-picker' class='pickermap'></div>").css({
 			width: opts.width,
@@ -144,11 +142,6 @@ $.fn.locationPicker = function(options) {
 				showPicker();
 			});
 		}
-
-		$(searchButton).click(function(event) {
-			addressFromTextInput();
-			event.stopPropagation();
-		});
 
 		$('html').click(function() {
 			picker.fadeOut('fast');
